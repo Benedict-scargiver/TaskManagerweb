@@ -1,3 +1,22 @@
+/* Style for the sign-up prompt below the sign-in button */
+.signup {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+}
+
+.signup a {
+  color: #0070f3;
+  text-decoration: none;
+  font-weight: 500;
+  transition: text-decoration 0.2s, color 0.2s;
+}
+
+.signup a:hover {
+  text-decoration: underline;
+  color: #0051a3;
+}
 .container {
   display: flex;
   flex-direction: column;

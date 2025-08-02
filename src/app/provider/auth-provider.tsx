@@ -4,6 +4,7 @@ import { ReactNode, useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { createContext } from "react"
 import { toast } from "react-hot-toast"
+import styles from "./auth-provider.module.css"
 
 interface AuthContextType {
   isAuthenticated: boolean
@@ -16,16 +17,27 @@ export const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 export default function AuthProvider({ children }: { children: ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false)
+  const [loading, setLoading] = useState<boolean>(true)
   const router = useRouter()
 
   useEffect(() => {
-    const session = localStorage.getItem("currentUser")
-    if (session) {
-      setIsAuthenticated(true)
-      router.push("/")
-    } else {
-      router.push("auth/sign-in")
+    const checkSession = () => {
+      const session = localStorage.getItem("currentUser")
+      const path = window.location.pathname
+      if (session) {
+        setIsAuthenticated(true)
+        if (path.startsWith("/auth")) {
+          router.push("/")
+        }
+      } else {
+        setIsAuthenticated(false)
+        if (!path.startsWith("/auth")) {
+          router.push("/auth/sign-in")
+        }
+      }
+      setLoading(false)
     }
+    checkSession()
   }, [router])
 
   const signup = (username: string, password: string) => {
@@ -65,6 +77,14 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     router.push("/auth/sign-in")
   }
 
+  if (loading) {
+    return (
+      <div className={styles.loaderContainer}>
+        <div className={styles.loaderSpinner}></div>
+        <span>Checking session...</span>
+      </div>
+    )
+  }
   return (
     <AuthContext.Provider value={{ isAuthenticated, signup, login, logout }}>
       {children}

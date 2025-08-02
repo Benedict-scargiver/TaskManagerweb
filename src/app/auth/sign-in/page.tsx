@@ -33,6 +33,9 @@ export default function SignInPage() {
       <button className={styles.button} onClick={handleLogin}>
         Sign In
       </button>
+      <p className={styles.signup}>
+        You not have an account? <a href="/auth/sign-up">Sign Up</a>
+      </p>
     </div>
   )
 }

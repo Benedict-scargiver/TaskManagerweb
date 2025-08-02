@@ -5,7 +5,7 @@ import styles from "./page.module.css"
 import { AuthContext } from "./provider/auth-provider"
 import Link from "next/link"
 import { toast } from "react-hot-toast"
-import { useRouter } from "next/navigation"
+
 
 interface Task {
   id: string
@@ -15,9 +15,9 @@ interface Task {
 }
 
 export default function HomePage() {
-  const { isAuthenticated, logout } = useContext(AuthContext) || {}
+  const { logout } = useContext(AuthContext) || {}
   const [tasks, setTasks] = useState<Task[]>([])
-  const router = useRouter()
+ 
 
   useEffect(() => {
     const loadTasks = () => {
