@@ -23,6 +23,8 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     if (session) {
       setIsAuthenticated(true)
       router.push("/")
+    } else {
+      router.push("auth/sign-in")
     }
   }, [router])
 
