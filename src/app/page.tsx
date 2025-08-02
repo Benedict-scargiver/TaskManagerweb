@@ -53,7 +53,14 @@ export default function HomePage() {
     toast.success(`Task "${task?.name}" deleted!`)
   }
 
-  if (!isAuthenticated) return null
+  if (isAuthenticated === undefined) {
+  return <div>Loading...</div>
+}
+
+  if (!isAuthenticated) {
+    window.location.href = "/auth/sign-in"
+    return null
+  }
 
   return (
     <div className={styles.container}>
