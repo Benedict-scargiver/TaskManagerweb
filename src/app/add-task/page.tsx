@@ -41,23 +41,25 @@ export default function AddTaskPage() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Add New Task</h1>
-      <input
-        type="text"
-        className={styles.input}
-        placeholder="Task Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        type="date"
-        className={styles.input}
-        value={dueDate}
-        onChange={(e) => setDueDate(e.target.value)}
-      />
-      <button className={styles.button} onClick={saveTask}>
-        Save Task
-      </button>
+      <div className={styles.card}>
+        <h1 className={styles.title}>Add New Task</h1>
+        <input
+          type="text"
+          className={styles.input}
+          placeholder="Task Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="date"
+          className={styles.input}
+          value={dueDate}
+          onChange={(e) => setDueDate(e.target.value)}
+        />
+        <button className={styles.button} onClick={saveTask}>
+          Save Task
+        </button>
+      </div>
     </div>
   )
 }

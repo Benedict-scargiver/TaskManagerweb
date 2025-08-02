@@ -34,7 +34,7 @@ export default function SignInPage() {
         Sign In
       </button>
       <p className={styles.signup}>
-        You not have an account? <a href="/auth/sign-up">Sign Up</a>
+        You do not have an account? <a href="/auth/sign-up">Sign Up</a>
       </p>
     </div>
   )
