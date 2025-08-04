@@ -2,6 +2,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Video Link
 
+https://www.loom.com/share/17994ab2222a4961b115d16d69d25aec?sid=7fee36a4-cb93-4907-9a71-7546cd7d9dbe
 
 
 ## Overview
@@ -28,7 +29,8 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 I used Visual Studio Code as my editor,
 and NextJS 15 for the framework
-TypeScript for type safety . I downloaded the dependencies with npm, used Git/GitHub for version control, and tested the app in the browser with responsive design adjustments.
+TypeScript for type safety .
+I downloaded the dependencies with npm, used Git/GitHub for version control, and tested the app in the browser with responsive design adjustments.
 
 ## Learn More
 
@@ -46,4 +48,4 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
 # taskManagerWeb
-# taskmanagerweb-cloud
+
